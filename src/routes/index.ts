@@ -7,11 +7,11 @@ import { notesRouter } from "./notes";
 const router = Router();
 
 router.get("/", health);
-router.post("register", register);
-router.post("login", login);
-router.get("protected", authMiddleware, protectedRoute);
+router.post("/register", register);
+router.post("/login", login);
+router.get("/protected", authMiddleware, protectedRoute);
 
 // ✅ rotas de notas protegidas
-router.use("notes", notesRouter);
+router.use("/notes", notesRouter);
 
 export default router;
